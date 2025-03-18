@@ -13,10 +13,10 @@ const AboutSection = () => {
 
         {/* Services Component */}
         <Services />
-      </div>
 
-      {/* Clients Component */}
-      <Clients />
+        {/* Clients Component */}
+        <Clients />
+      </div>
     </section>
   );
 };

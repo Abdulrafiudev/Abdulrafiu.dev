@@ -8,8 +8,8 @@ import MagneticButton from "../Miscellaneous/MagneticButton";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutOne = ({
-  title = "Helping brands achieve digital mastery through innovative development and strategic execution.",
-  subTitle = "Transforming ideas into digital realities by blending strategic insights with innovative development, helping brands thrive in a rapidly evolving digital landscape.",
+  title = "A Passionate Full-Stack Developer Crafting Scalable & Innovative Digital Solutions",
+  subTitle = "A dedicated and detail-oriented full-stack developer with expertise in building dynamic, high-performance web applications. Passionate about crafting seamless user experiences, optimizing backend efficiency, and delivering scalable solutions using modern technologies.",
   buttonText = "About Me",
   buttonLink = "/about",
 }) => {

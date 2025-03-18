@@ -2,9 +2,9 @@ import React from "react";
 import MagneticButton from "../Miscellaneous/MagneticButton";
 
 const Hero = ({
-  introText = "Hello! I’m Abdulrafiu Ibrahim,a Fullstack Web developer💻.",
-  title = "Creating impactful experiences through",
-  highlightedText = "web development.",
+  introText = "Creating impactful experiences through web development💻.",
+  title = "Hello!, I’m Abdulrafiu Ibrahim,",
+  highlightedText = "a Fullstack Web developer.",
   buttonText = "Let's Talk!",
   description = "I transform ideas into powerful web experiences, delivering innovative solutions that add value, enhance brands, and engage users globally.",
   bgImage1 = "/img/hero-bg-1.svg",

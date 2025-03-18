@@ -2,16 +2,45 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const PortfolioOne = () => {
-  const [portfolioItems, setPortfolioItems] = useState([]);
-
-  useEffect(() => {
-    // Fetch only the first 4 portfolio items
-    axios
-      .get("https://my-json-server.typicode.com/themeland/brilio-json-1/portfolio?_limit=4") // _limit=4 limits the results to 4 items
-      .then((response) => setPortfolioItems(response.data))
-      .catch((error) => console.error("Error fetching portfolio data:", error));
-  }, []);
-
+  const portfolioItems = [
+    {
+      image: "/img/amazon-clone1.png",
+      title: "Amazon Clone: A Full-Stack E-Commerce Website Replica",
+      categories: [
+        {
+          categoryName: "Ecommerce",
+        },
+      ],
+    },
+    {
+      image: "/img/towsheart.png",
+      title: "Towsheart: Engaging & Modern Dating Site Landing Page",
+      categories: [
+        {
+          categoryName: "Frontend web development",
+        },
+      ],
+    },
+    {
+      image: "/img/poem-generator.png",
+      title: "PoetAI: A Creative & Dynamic Poem Generator Landing Page",
+      categories: [
+        {
+          categoryName: "Frontend web development",
+        },
+      ],
+    },
+    {
+      image: "/img/abdulrafiu.ai-chatbot.png",
+      title: "A custom made chatbot",
+      categories: [
+        {
+          categoryName: "A Gemini Api driven web app",
+        },
+      ],
+    },
+    ,
+  ];
   return (
     <div className="row">
       <div className="stack-wrapper">
@@ -28,8 +57,12 @@ const PortfolioOne = () => {
                     <div className="show-project">
                       <div className="card-terms">
                         {item.categories.map((category, index) => (
-                          <a className="terms badge outlined" href="/portfolio" key={index}>
-                            {category}
+                          <a
+                            className="terms badge outlined"
+                            href="/portfolio"
+                            key={index}
+                          >
+                            {category.categoryName}
                           </a>
                         ))}
                       </div>

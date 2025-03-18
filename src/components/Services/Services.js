@@ -9,21 +9,22 @@ const services = [
   },
   {
     id: "02",
-    title: "Web Consultation",
+    title: "UI/UX Design",
     description:
-      "With deep expertise in front-end and back-end technologies, I provide strategic guidance to help businesses optimize their online presence. From improving website speed and SEO to choosing the right tech stack, I offer insights that drive efficiency and growth.",
+      "Crafting visually stunning and user-friendly interfaces to enhance user experience. I focus on intuitive navigation, modern aesthetics, and responsive designs that ensure seamless interactions across all devices. My approach combines creativity with usability to create engaging digital experiences that captivate and convert.",
   },
   {
     id: "03",
-    title: "Custom Web Solutions & Integrations",
+    title: "Web Consultation",
     description:
-      "I create tailored web solutions, including API integrations, authentication systems, and automation tools. Whether you need third-party service integration, database management, or a dynamic feature for your platform, I deliver secure and efficient implementations.",
+      "With deep expertise in front-end and back-end technologies, I provide strategic guidance to help businesses optimize their online presence. From improving website speed and SEO to choosing the right tech stack, I offer insights that drive efficiency and growth.",
   },
 ];
 
 const Services = () => {
   return (
-    <div className="row service-wrapper items mt-md-5">
+    <div className="row service-wrapper items mt-md-6">
+      <h2> Services Offered:</h2>
       {services.map((service, index) => (
         <div key={index} className="col-12 col-md-6 col-lg-4">
           <div className="item d-flex align-items-start">
