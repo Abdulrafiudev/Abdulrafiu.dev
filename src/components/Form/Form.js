@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
-import MagneticButton from '../Miscellaneous/MagneticButton';
+import React, { useState } from "react";
+import MagneticButton from "../Miscellaneous/MagneticButton";
 
 const Form = () => {
   const contactInfo = {
-    title: 'Schedule a call with me to see if I can help',
-    description: 'Whether you’re looking to start a new project or simply want to chat, feel free to reach out to me!',
-    phone: '+1.890.473.5102',
-    email: 'hello@brilio.com',
-    address: '912 Park Ave, Ketchikan, Alaska 99901, USA',
+    title: "Schedule a call with me to see if I can help",
+    description:
+      "Whether you’re looking to start a new project or simply want to chat, feel free to reach out to me!",
+    phone: "+2349059428606",
+    phone2: "+2348147493495",
+    email: "abdulrafiu.dev@gmail.com",
+    address: "F.C.T Abuja, Nigeria.",
   };
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    companyName: '',
-    website: '',
-    interest: '',
-    budget: '',
-    timeline: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    budget: "",
+    timeline: "",
+    message: "",
   });
 
   const handleInputChange = (e) => {
@@ -48,15 +47,27 @@ const Form = () => {
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item">
                     <i className="icon icon-phone"></i>
-                    <a className="content" href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
+                    <a className="content" href={`tel:${contactInfo.phone}`}>
+                      {contactInfo.phone}
+                    </a>
+                  </li>
+                  <li className="list-group-item">
+                    <i className="icon icon-phone"></i>
+                    <a className="content" href={`tel:${contactInfo.phone2}`}>
+                      {contactInfo.phone2}
+                    </a>
                   </li>
                   <li className="list-group-item">
                     <i className="icon icon-envelope-open"></i>
-                    <a className="content" href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+                    <a className="content" href={`mailto:${contactInfo.email}`}>
+                      {contactInfo.email}
+                    </a>
                   </li>
                   <li className="list-group-item">
                     <i className="icon icon-location-pin"></i>
-                    <a className="content" href="/#">{contactInfo.address}</a>
+                    <a className="content" href="/#">
+                      {contactInfo.address}
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -64,7 +75,11 @@ const Form = () => {
           </div>
 
           <div className="col-12 col-lg-7 order-first order-md-last mt-sm-4 mt-lg-0">
-            <form id="contact-form" className="contact-form">
+            <form
+              id="contact-form"
+              className="contact-form"
+              onSubmit={handleSubmit}
+            >
               <div className="form-floating mb-3">
                 <input
                   type="text"
@@ -98,33 +113,17 @@ const Form = () => {
                 />
                 <label htmlFor="phone">Phone</label>
               </div>
-              <div className="form-floating mb-3">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="companyName"
-                  placeholder="Company Name"
-                  value={formData.companyName}
-                  onChange={handleInputChange}
-                />
-                <label htmlFor="companyName">Company Name</label>
-              </div>
-              <div className="form-floating mb-3">
-                <input
-                  type="url"
-                  className="form-control"
-                  id="website"
-                  placeholder="Company Website"
-                  value={formData.website}
-                  onChange={handleInputChange}
-                />
-                <label htmlFor="website">Company Website</label>
-              </div>
+
               <div className="form-group mb-3">
                 <div className="form-label">I'm interested in:</div>
                 <div className="form-input-group">
-                  {['Branding', 'Web Design', 'App Design', 'Other'].map((option) => (
-                    <div className="form-input" key={option}>
+                  {[
+                    "Web Development",
+                    "UI/UX Design",
+                    "Web Consultation",
+                    "Other",
+                  ].map((option, index) => (
+                    <div className="form-input" key={index}>
                       <input
                         type="radio"
                         className="btn-check"
@@ -133,7 +132,10 @@ const Form = () => {
                         value={option}
                         onChange={handleInputChange}
                       />
-                      <label className="btn magnetic-button btn-outline" htmlFor={`option-${option.toLowerCase()}`}>
+                      <label
+                        className="btn magnetic-button btn-outline"
+                        htmlFor={`option-${option.toLowerCase()}`}
+                      >
                         {option}
                       </label>
                     </div>
@@ -143,33 +145,40 @@ const Form = () => {
               <div className="form-group mb-3">
                 <div className="form-label">My budget is:</div>
                 <div className="form-input-group">
-                  {['< 2k', '2-5k', '5-10k', '10-15k', '> 20k'].map((budget) => (
-                    <div className="form-input" key={budget}>
-                      <input
-                        type="radio"
-                        className="btn-check"
-                        name="budget"
-                        id={`budget-${budget.replace(' ', '-')}`}
-                        value={budget}
-                        onChange={handleInputChange}
-                      />
-                      <label className="btn magnetic-button btn-outline" htmlFor={`budget-${budget.replace(' ', '-')}`}>
-                        {budget}
-                      </label>
-                    </div>
-                  ))}
+                  {["< 2k", "2-5k", "5-10k", "10-15k", "> 20k"].map(
+                    (budget, index) => (
+                      <div className="form-input" key={index}>
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="budget"
+                          id={`budget-${budget.replace(" ", "-")}`}
+                          value={budget}
+                          onChange={handleInputChange}
+                        />
+                        <label
+                          className="btn magnetic-button btn-outline"
+                          htmlFor={`budget-${budget.replace(" ", "-")}`}
+                        >
+                          {budget}
+                        </label>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
               <div className="form-floating mb-3">
                 <input
                   type="text"
                   className="form-control"
-                  id="exact-budget"
+                  id="budget"
                   placeholder="Exact Budget"
                   value={formData.budget}
                   onChange={handleInputChange}
                 />
-                <label htmlFor="exact-budget">Do you have an exact budget?</label>
+                <label htmlFor="exact-budget">
+                  Do you have an exact budget?
+                </label>
               </div>
               <div className="form-floating mb-3">
                 <input
@@ -187,17 +196,13 @@ const Form = () => {
                   className="form-control"
                   id="message"
                   placeholder="Leave a comment here"
-                  style={{ height: '100px' }}
+                  style={{ height: "100px" }}
                   value={formData.message}
                   onChange={handleInputChange}
                 />
                 <label htmlFor="message">Message</label>
               </div>
-				<MagneticButton 
-					href="/#"
-					>
-					Submit Message
-				</MagneticButton>
+              <button className="btn magnetic-button">Submit Message</button>
             </form>
             <p className="form-message"></p>
           </div>

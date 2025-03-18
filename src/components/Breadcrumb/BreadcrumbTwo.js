@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
 const BreadcrumbTwo = () => {
   const breadcrumbContent = {
     title: "Showcasing innovation",
-    subheading: "and expertise"
+    subheading: "and expertise",
   };
 
   return (
     <section id="home" className="breadcrumb-section">
       <div className="container">
         <div className="row justify-content-center align-items-center">
-          <div className="col-12">
+          <div className="col-12 md-mm-5">
             <div className="content w-60">
               <h1 className="title">{breadcrumbContent.title}</h1>
               <div className="flex ms-auto">

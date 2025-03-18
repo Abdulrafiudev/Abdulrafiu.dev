@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const BreadcrumbThree = () => {
   const breadcrumbContent = {
     title1: "Let's talk!",
-    title2: "design"
+    title2: "Web💻.",
   };
 
   return (
     <section id="home" className="breadcrumb-section">
-      <div className="container">
+      <div className="container ctc-no">
         <div className="row">
           <div className="col-12">
             {/* Breadcrumb Content */}

@@ -44,8 +44,8 @@ const PortfolioOne = () => {
   return (
     <div className="row">
       <div className="stack-wrapper">
-        {portfolioItems.map((item) => (
-          <div className="stack-item" key={item.id}>
+        {portfolioItems.map((item, index) => (
+          <div className="stack-item" key={index}>
             <div className="card portfolio-item layout-2 scale has-shadow">
               <div className="image-holder">
                 <a className="card-thumb" href="/portfolio-single">

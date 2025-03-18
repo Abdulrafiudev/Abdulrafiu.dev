@@ -306,6 +306,9 @@ q p {
   .mt-md-7 {
     margin-top: 0rem !important;
   }
+  .ctc-no {
+    margin-top: 3rem;
+  }
 }
 
 figure {
@@ -3694,6 +3697,13 @@ span.page-numbers:hover:not(.current) {
 @media (max-width: 575px) {
   .preview .hero-section {
     padding-bottom: 0;
+  }
+  .md-mm-5 {
+    margin-top: 2rem;
+  }
+  .no-pad {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 .preview .card .image-holder {
