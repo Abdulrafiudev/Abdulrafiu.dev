@@ -64,6 +64,14 @@ const Form = () => {
         position: "top-right",
         autoClose: 2000,
       });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        budget: "",
+        timeline: "",
+        message: "",
+      });
       console.log(response.data);
     } catch (e) {
       console.log(e);
@@ -197,9 +205,7 @@ const Form = () => {
                   onChange={handleInputChange}
                   required
                 />
-                <label htmlFor="exact-budget">
-                  Do you have an exact budget?
-                </label>
+                <label htmlFor="exact-budget">What is your budget?</label>
               </div>
               <div className="form-floating mb-3">
                 <input
