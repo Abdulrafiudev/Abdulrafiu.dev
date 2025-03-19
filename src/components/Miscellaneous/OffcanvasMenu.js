@@ -1,14 +1,42 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { menuItems, socialLinks } from "../Header/menuConfig";
+import { menuItems } from "../Header/menuConfig";
 
 const OffcanvasMenu = ({ className = "offcanvas-wrapper" }) => {
   const location = useLocation(); // Get current URL path
 
+  const socialLinks = [
+    {
+      name: "Github",
+      link: "https://github.com/Abdulrafiudev",
+    },
+    {
+      name: "Linkdin",
+      link: "https://www.linkedin.com/in/abdulrafiu-ibrahim-176621343/",
+    },
+    ,
+    {
+      name: "Twitter",
+      link: "https://x.com/Abdulrafiu_dev",
+    },
+    {
+      name: "Gmail",
+      link: "mailto:abdulrafiu.dev@gmail.com",
+    },
+    {
+      name: "Whatsapp",
+      link: "https://wa.me/2348147493495",
+    },
+  ];
+
   return (
     <div className={className}>
       {/* Navbar Toggler */}
-      <div className="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+      <div
+        className="navbar-toggler"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+      >
         <div className="navbar-header">
           <div className="content">
             <div className="toggler-icon"></div>
@@ -39,9 +67,15 @@ const OffcanvasMenu = ({ className = "offcanvas-wrapper" }) => {
               <ul className="navbar-nav menu pt-md-4">
                 {menuItems.map((item, index) => (
                   <li className="nav-item" key={index}>
-					<a href={item.href} className={`nav-link ${location.pathname === item.href ? "active" : ""}`}>
-						{item.label} <span className="item-count">({index + 1})</span>
-					</a>
+                    <a
+                      href={item.href}
+                      className={`nav-link ${
+                        location.pathname === item.href ? "active" : ""
+                      }`}
+                    >
+                      {item.label}{" "}
+                      <span className="item-count">({index + 1})</span>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -60,8 +94,14 @@ const OffcanvasMenu = ({ className = "offcanvas-wrapper" }) => {
             <div className="socials offcanvas-body">
               <nav className="nav">
                 {socialLinks.map((social, index) => (
-                  <a className="nav-link swap-icon" href={social.href} key={index}>
-                    {social.label} <i className="icon rotate bi bi-arrow-right-short"></i>
+                  <a
+                    className="nav-link swap-icon"
+                    href={social.link}
+                    key={index}
+                    target="_blank"
+                  >
+                    {social.name}{" "}
+                    <i className="icon rotate bi bi-arrow-right-short"></i>
                   </a>
                 ))}
               </nav>

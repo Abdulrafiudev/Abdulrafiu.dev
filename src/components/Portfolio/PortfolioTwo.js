@@ -5,21 +5,21 @@ const portfolioData = [
     id: 1,
     title: "A Full-Stack E-Commerce Website Replica",
     image: "/img/amazon-clone1.png",
-    categories: '["Fullstack Web Development"]',
+    categories: '["Web Development", "ui-ux"]',
     projectLink: "/portfolio-single",
   },
   {
     id: 2,
     title: "Engaging & Modern Dating Site Landing Page",
     image: "/img/towsheart.png",
-    categories: '["Frontend Web Debelopment"]',
+    categories: '["Web Development", "ui-ux"]',
     projectLink: "/portfolio-single",
   },
   {
     id: 3,
     title: "A Creative & Dynamic Poem Generator Landing Page",
     image: "/img/poem-generator.png",
-    categories: '["ui-ux", "Frontend Web Development"]',
+    categories: '["Web Development","ui-ux"]',
     projectLink: "/portfolio-single",
   },
   {
@@ -33,9 +33,8 @@ const portfolioData = [
 
 const categories = [
   { id: "all", label: "All" },
-  { id: "Fullstack Web Development", label: "Fullstack Web Development" },
-  { id: "ui-ux", label: "UI/UX" },
-  { id: "Frontend Web Development", label: "Frontend Web Development" },
+  { id: "Web Development", label: "Web Development/UI" },
+  { id: "API Integration", label: "API Integration" },
 ];
 
 const getCategoryCount = (category) => {
@@ -93,7 +92,10 @@ const PortfolioTwo = () => {
               <div className="card portfolio-item layout-2 scale has-shadow">
                 <div className="image-holder">
                   {/* Card Thumb */}
-                  <a className="card-thumb" href={item.projectLink}>
+                  <a
+                    className="card-thumb"
+                    href={`${item.projectLink}?id=${item.id}`}
+                  >
                     <img src={item.image} alt={item.title} />
                   </a>
                 </div>
@@ -118,7 +120,9 @@ const PortfolioTwo = () => {
                           : null}
                       </div>
                       <div className="project-link">
-                        <a href={item.projectLink}>Show Project</a>
+                        <a href={`${item.projectLink}?id=${item.id}`}>
+                          Show Project
+                        </a>
                       </div>
                     </div>
                   </div>

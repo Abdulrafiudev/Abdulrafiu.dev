@@ -4,6 +4,7 @@ import axios from "axios";
 const PortfolioOne = () => {
   const portfolioItems = [
     {
+      id: 1,
       image: "/img/amazon-clone1.png",
       title: "Amazon Clone: A Full-Stack E-Commerce Website Replica",
       categories: [
@@ -13,6 +14,7 @@ const PortfolioOne = () => {
       ],
     },
     {
+      id: 2,
       image: "/img/towsheart.png",
       title: "Towsheart: Engaging & Modern Dating Site Landing Page",
       categories: [
@@ -22,6 +24,7 @@ const PortfolioOne = () => {
       ],
     },
     {
+      id: 3,
       image: "/img/poem-generator.png",
       title: "PoetAI: A Creative & Dynamic Poem Generator Landing Page",
       categories: [
@@ -31,6 +34,7 @@ const PortfolioOne = () => {
       ],
     },
     {
+      id: 4,
       image: "/img/abdulrafiu.ai-chatbot.png",
       title: "A custom made chatbot",
       categories: [
@@ -48,7 +52,10 @@ const PortfolioOne = () => {
           <div className="stack-item" key={index}>
             <div className="card portfolio-item layout-2 scale has-shadow">
               <div className="image-holder">
-                <a className="card-thumb" href="/portfolio-single">
+                <a
+                  className="card-thumb"
+                  href={`/portfolio-single?id=${item.id}`}
+                >
                   <img src={item.image} alt={item.title} />
                 </a>
                 <div className="card-overlay">
@@ -67,7 +74,9 @@ const PortfolioOne = () => {
                         ))}
                       </div>
                       <div className="project-link">
-                        <a href="/portfolio-single">Show Project</a>
+                        <a href={`/portfolio-single?id=${item.id}`}>
+                          Show Project
+                        </a>
                       </div>
                     </div>
                   </div>

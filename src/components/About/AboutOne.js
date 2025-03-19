@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AboutOne = ({
   title = "A Passionate Full-Stack Developer Crafting Scalable & Innovative Digital Solutions",
-  subTitle = "A dedicated and detail-oriented full-stack developer with expertise in building dynamic, high-performance web applications. Passionate about crafting seamless user experiences, optimizing backend efficiency, and delivering scalable solutions using modern technologies.",
+  subTitle = "I'm a dedicated and detail-oriented full-stack developer with expertise in building dynamic, high-performance web applications. Passionate about crafting seamless user experiences, optimizing backend efficiency, and delivering scalable solutions using modern technologies.",
   buttonText = "About Me",
   buttonLink = "/about",
 }) => {

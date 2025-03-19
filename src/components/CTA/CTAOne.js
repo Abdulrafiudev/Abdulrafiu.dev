@@ -47,6 +47,10 @@ const CTAOne = () => {
         name: "Gmail",
         link: "mailto:abdulrafiu.dev@gmail.com",
       },
+      {
+        name: "Whatsapp",
+        link: "https://wa.me/2348147493495",
+      },
     ],
   };
 
@@ -73,6 +77,7 @@ const CTAOne = () => {
                       key={index}
                       className="nav-link swap-icon"
                       href={social.link}
+                      target="_blank"
                     >
                       {social.name}{" "}
                       <i className="icon rotate bi bi-arrow-right-short"></i>

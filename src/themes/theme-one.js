@@ -6,8 +6,6 @@ import Hero from "../components/Hero/Hero";
 import Portfolio from "../components/Portfolio/PortfolioSection";
 import AboutSection from "../components/About/AboutSection";
 import Shape from "../components/Shape/Shape";
-import Awards from "../components/Awards/AwardsOne";
-import Blog from "../components/Blog/BlogSection";
 import CTA from "../components/CTA/CTAOne";
 import Footer from "../components/Footer/Footer";
 import SearchModal from "../components/Miscellaneous/SearchModal";
