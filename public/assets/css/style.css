@@ -303,6 +303,9 @@ q p {
 .col-12 .item1 img {
   border-radius: 10px;
 }
+.Toastify {
+  padding: 0 !important;
+}
 
 @media (max-width: 575px) {
   .blockquote {

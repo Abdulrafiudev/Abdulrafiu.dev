@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import MagneticButton from "../Miscellaneous/MagneticButton";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Form = () => {
   const contactInfo = {
     title: "Schedule a call with me to see if I can help",
     description:
       "Whether you’re looking to start a new project or simply want to chat, feel free to reach out to me!",
-    phone: "+2349059428606",
-    phone2: "+2348147493495",
+    phone: "(+234)-9059428606",
+    phone2: "(+234)-8147493495",
     email: "abdulrafiu.dev@gmail.com",
     address: "F.C.T Abuja, Nigeria.",
   };
@@ -29,9 +32,46 @@ const Form = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+    // Sending mail via Emailjs
+    try {
+      const response = await axios.post(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        {
+          service_id: "service_dz12h7p",
+          template_id: "template_wj5z9ul",
+          user_id: "5tqts9tVEIevlbcZM",
+          template_params: {
+            name: formData.name,
+            service: "",
+            phone: formData.phone,
+            budget: formData.budget,
+            timeline: formData.timeline,
+            message: formData.message,
+            email: formData.email,
+          },
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      toast.success("Email Sent Successfully", {
+        position: "top-right",
+        autoClose: 2000,
+      });
+      console.log(response.data);
+    } catch (e) {
+      console.log(e);
+      toast.error("Error In Sending Email", {
+        position: "top-right",
+        autoClose: 2000,
+      });
+    }
   };
 
   return (
@@ -47,13 +87,13 @@ const Form = () => {
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item">
                     <i className="icon icon-phone"></i>
-                    <a className="content" href={`tel:${contactInfo.phone}`}>
+                    <a className="content" href={`tel:09059428608`}>
                       {contactInfo.phone}
                     </a>
                   </li>
                   <li className="list-group-item">
                     <i className="icon icon-phone"></i>
-                    <a className="content" href={`tel:${contactInfo.phone2}`}>
+                    <a className="content" href={`tel:08147493495`}>
                       {contactInfo.phone2}
                     </a>
                   </li>
@@ -88,6 +128,7 @@ const Form = () => {
                   placeholder="Name"
                   value={formData.name}
                   onChange={handleInputChange}
+                  required
                 />
                 <label htmlFor="name">Name</label>
               </div>
@@ -99,6 +140,7 @@ const Form = () => {
                   placeholder="name@example.com"
                   value={formData.email}
                   onChange={handleInputChange}
+                  required
                 />
                 <label htmlFor="email">Email address</label>
               </div>
@@ -110,6 +152,7 @@ const Form = () => {
                   placeholder="Phone"
                   value={formData.phone}
                   onChange={handleInputChange}
+                  required
                 />
                 <label htmlFor="phone">Phone</label>
               </div>
@@ -128,13 +171,14 @@ const Form = () => {
                         type="radio"
                         className="btn-check"
                         name="interest"
-                        id={`option-${option.toLowerCase()}`}
+                        id={`option-${option.toLocaleLowerCase()}`}
                         value={option}
                         onChange={handleInputChange}
+                        required
                       />
                       <label
                         className="btn magnetic-button btn-outline"
-                        htmlFor={`option-${option.toLowerCase()}`}
+                        htmlFor={`option-${option.toLocaleLowerCase()}`}
                       >
                         {option}
                       </label>
@@ -142,31 +186,7 @@ const Form = () => {
                   ))}
                 </div>
               </div>
-              <div className="form-group mb-3">
-                <div className="form-label">My budget is:</div>
-                <div className="form-input-group">
-                  {["< 2k", "2-5k", "5-10k", "10-15k", "> 20k"].map(
-                    (budget, index) => (
-                      <div className="form-input" key={index}>
-                        <input
-                          type="radio"
-                          className="btn-check"
-                          name="budget"
-                          id={`budget-${budget.replace(" ", "-")}`}
-                          value={budget}
-                          onChange={handleInputChange}
-                        />
-                        <label
-                          className="btn magnetic-button btn-outline"
-                          htmlFor={`budget-${budget.replace(" ", "-")}`}
-                        >
-                          {budget}
-                        </label>
-                      </div>
-                    )
-                  )}
-                </div>
-              </div>
+
               <div className="form-floating mb-3">
                 <input
                   type="text"
@@ -175,6 +195,7 @@ const Form = () => {
                   placeholder="Exact Budget"
                   value={formData.budget}
                   onChange={handleInputChange}
+                  required
                 />
                 <label htmlFor="exact-budget">
                   Do you have an exact budget?
@@ -188,6 +209,7 @@ const Form = () => {
                   placeholder="Timeline"
                   value={formData.timeline}
                   onChange={handleInputChange}
+                  required
                 />
                 <label htmlFor="timeline">What is your timeline?</label>
               </div>
@@ -199,6 +221,7 @@ const Form = () => {
                   style={{ height: "100px" }}
                   value={formData.message}
                   onChange={handleInputChange}
+                  required
                 />
                 <label htmlFor="message">Message</label>
               </div>
@@ -208,6 +231,7 @@ const Form = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };
