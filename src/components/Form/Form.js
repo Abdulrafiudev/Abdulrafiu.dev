@@ -22,6 +22,7 @@ const Form = () => {
     budget: "",
     timeline: "",
     message: "",
+    option: "",
   });
 
   const handleInputChange = (e) => {
@@ -40,7 +41,7 @@ const Form = () => {
       const response = await axios.post(
         "https://api.emailjs.com/api/v1.0/email/send",
         {
-          service_id: "service_dz12h7p",
+          service_id: "service_dz12h7p.",
           template_id: "template_wj5z9ul",
           user_id: "5tqts9tVEIevlbcZM",
           template_params: {
@@ -165,7 +166,7 @@ const Form = () => {
                 <label htmlFor="phone">Phone</label>
               </div>
 
-              <div className="form-group mb-3">
+              {/* <div className="form-group mb-3">
                 <div className="form-label">I'm interested in:</div>
                 <div className="form-input-group">
                   {[
@@ -193,7 +194,7 @@ const Form = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               <div className="form-floating mb-3">
                 <input

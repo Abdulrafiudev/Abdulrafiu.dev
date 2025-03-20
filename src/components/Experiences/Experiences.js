@@ -35,7 +35,7 @@ const Experiences = () => {
       count: "04.",
       title: "Piquora",
       position: "Frontend Developer",
-      date: "July 2024 – August 2024",
+      date: "June 2024 – August 2024",
       description:
         "As a Frontend Developer at Piquora, I was responsible for developing the user interface of a dating platform, ensuring a seamless and engaging user experience. Using HTML, CSS and JavaScript, I built responsive and interactive UI components that enhanced usability and performance. I collaborated closely with the backend developers and designers to translate ideas into a visually appealing and functional web application. ",
     },
