@@ -41,7 +41,7 @@ const Form = () => {
       const response = await axios.post(
         "https://api.emailjs.com/api/v1.0/email/send",
         {
-          service_id: "service_dz12h7p.",
+          service_id: "service_dz12h7p",
           template_id: "template_wj5z9ul",
           user_id: "5tqts9tVEIevlbcZM",
           template_params: {
