@@ -6,28 +6,28 @@ const portfolioData = [
     title: "A Full-Stack E-Commerce Website Replica",
     image: "/img/amazon-clone1.png",
     categories: '["Web Development", "ui-ux"]',
-    projectLink: "/portfolio-single",
+    projectLink: "/project-single",
   },
   {
     id: 2,
     title: "Engaging & Modern Dating Site Landing Page",
     image: "/img/towsheart.png",
     categories: '["Web Development", "ui-ux"]',
-    projectLink: "/portfolio-single",
+    projectLink: "/project-single",
   },
   {
     id: 3,
     title: "A Creative & Dynamic Poem Generator Landing Page",
     image: "/img/poem-generator.png",
     categories: '["Web Development","ui-ux"]',
-    projectLink: "/portfolio-single",
+    projectLink: "/project-single",
   },
   {
     id: 4,
     title: "A custom made chatbot",
     image: "/img/abdulrafiu.ai-chatbot.png",
     categories: '["API Integration", "ui-ux"]',
-    projectLink: "/portfolio-single",
+    projectLink: "/project-single",
   },
 ];
 

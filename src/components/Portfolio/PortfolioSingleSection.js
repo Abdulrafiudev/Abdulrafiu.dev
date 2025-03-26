@@ -87,7 +87,7 @@ const PortfolioSingleSection = () => {
               <div className="portfolio-meta d-flex align-items-center">
                 <div className="portfolio-terms">
                   {portfolio.categories.map((category, index) => (
-                    <a key={index} className="terms" href="/portfolio">
+                    <a key={index} className="terms" href="/projects">
                       {category}
                     </a>
                   ))}

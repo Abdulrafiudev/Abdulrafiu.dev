@@ -15,12 +15,12 @@ const MyRoutes = () => {
     <Router>
       <Routes>
         <Route path="/" element={<ThemeOne />} />
-		<Route path="/portfolio" element={<Portfolio />} />
-		<Route path="/portfolio-single" element={<PortfolioSingle />} />
-		<Route path="/about" element={<About />} />
-		<Route path="/blog" element={<Blog />} />
-		<Route path="/blog-single" element={<BlogSingle />} />
-		<Route path="/contact" element={<Contact />} />
+        <Route path="/projects" element={<Portfolio />} />
+        <Route path="/project-single" element={<PortfolioSingle />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog-single" element={<BlogSingle />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );

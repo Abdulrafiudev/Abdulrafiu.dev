@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-
 const PortfolioOne = () => {
   const portfolioItems = [
     {
@@ -54,7 +51,7 @@ const PortfolioOne = () => {
               <div className="image-holder">
                 <a
                   className="card-thumb"
-                  href={`/portfolio-single?id=${item.id}`}
+                  href={`/project-single?id=${item.id}`}
                 >
                   <img src={item.image} alt={item.title} />
                 </a>
@@ -66,7 +63,7 @@ const PortfolioOne = () => {
                         {item.categories.map((category, index) => (
                           <a
                             className="terms badge outlined"
-                            href="/portfolio"
+                            href="/projects"
                             key={index}
                           >
                             {category.categoryName}
@@ -74,7 +71,7 @@ const PortfolioOne = () => {
                         ))}
                       </div>
                       <div className="project-link">
-                        <a href={`/portfolio-single?id=${item.id}`}>
+                        <a href={`/project-single?id=${item.id}`}>
                           Show Project
                         </a>
                       </div>

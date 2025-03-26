@@ -1,7 +1,10 @@
 import React from "react";
 import PortfolioOne from "./PortfolioOne";
 
-const PortfolioSection = ({ title = "Selected Works", viewAllLink = "/portfolio" }) => {
+const PortfolioSection = ({
+  title = "Selected Works",
+  viewAllLink = "/projects",
+}) => {
   return (
     <section className="works position-relative p-0">
       <div className="container">
@@ -10,7 +13,10 @@ const PortfolioSection = ({ title = "Selected Works", viewAllLink = "/portfolio"
             {/* Intro */}
             <div className="intro d-flex justify-content-between align-items-center">
               <h3 className="title">{title}</h3>
-              <a className="btn btn-outline content-btn swap-icon" href={viewAllLink}>
+              <a
+                className="btn btn-outline content-btn swap-icon"
+                href={viewAllLink}
+              >
                 View All <i className="icon bi bi-arrow-right-short"></i>
               </a>
             </div>
