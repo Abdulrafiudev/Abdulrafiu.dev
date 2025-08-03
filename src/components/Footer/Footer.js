@@ -1,5 +1,3 @@
-import React from "react";
-
 const Footer = ({
   className = "footer-area",
   copyrightText = "©2025 Abdulrafiu Ibrahim, All Rights Reserved By",

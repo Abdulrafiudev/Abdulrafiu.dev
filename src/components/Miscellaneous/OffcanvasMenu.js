@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { menuItems } from "../Header/menuConfig";
+import resume from "../../resume.pdf";
 
 const OffcanvasMenu = ({ className = "offcanvas-wrapper" }) => {
   const location = useLocation(); // Get current URL path
@@ -79,6 +80,9 @@ const OffcanvasMenu = ({ className = "offcanvas-wrapper" }) => {
                   </li>
                 ))}
               </ul>
+              <a href={resume} download="resume.pdf" className="resume-link">
+                Resume <i className="fas fa-download me-2"></i>
+              </a>
             </div>
           </div>
 

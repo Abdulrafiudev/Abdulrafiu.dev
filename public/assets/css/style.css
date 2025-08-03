@@ -2068,6 +2068,25 @@ body.odd .skill-category h3 {
   color: var(--white-color);
   border-color: var(--white-color);
 }
+.resume-link {
+  font-size: 2.5rem !important;
+  font-weight: 500;
+  color: var(--white-color) !important;
+  display: table-cell;
+  padding: 10px 5px;
+  cursor: pointer;
+}
+.resumebtn {
+  position: relative;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  font-weight: 600 !important;
+  color: var(--top-nav-item-color) !important;
+  cursor: pointer;
+}
+body.odd .resumebtn {
+  color: var(--white-color);
+}
 @media (max-width: 991px) {
   .stack-wrapper .stack-item {
     top: 4rem;
@@ -2080,6 +2099,9 @@ body.odd .skill-category h3 {
   .hero-button {
     display: flex;
     justify-content: center;
+  }
+  .resume-link {
+    font-size: 2rem !important;
   }
 }
 @media (max-width: 575px) {

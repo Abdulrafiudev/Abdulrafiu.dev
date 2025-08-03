@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { menuItems } from "./menuConfig";
+import resume from "../../resume.pdf";
 
 const Header = () => {
   const location = useLocation();
@@ -47,6 +48,9 @@ const Header = () => {
               </li>
             ))}
           </ul>
+          <a href={resume} download="resume.pdf" className="resumebtn">
+            Resume <i className="fas fa-download me-2"></i>
+          </a>
 
           <ul className="navbar-nav icons d-flex align-items-center">
             <li className="nav-item">

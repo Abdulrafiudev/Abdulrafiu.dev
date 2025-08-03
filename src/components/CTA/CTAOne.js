@@ -35,7 +35,7 @@ const CTAOne = () => {
         link: "https://github.com/Abdulrafiudev",
       },
       {
-        name: "Linkdin",
+        name: "Linkedin",
         link: "https://www.linkedin.com/in/abdulrafiu-ibrahim-176621343/",
       },
       ,
