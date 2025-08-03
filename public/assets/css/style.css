@@ -2087,6 +2087,9 @@ body.odd .skill-category h3 {
 body.odd .resumebtn {
   color: var(--white-color);
 }
+.socials-link {
+  padding-top: 0px;
+}
 
 @media (max-width: 991px) {
   .stack-wrapper .stack-item {

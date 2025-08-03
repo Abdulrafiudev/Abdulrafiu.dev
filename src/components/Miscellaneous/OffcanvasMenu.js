@@ -88,14 +88,14 @@ const OffcanvasMenu = ({ className = "offcanvas-wrapper" }) => {
 
           {/* Offcanvas Social */}
           <div className="offcanvas-social">
-            <div className="offcanvas-header">
-              <h5 className="offcanvas-title mt-0">Socials</h5>
-            </div>
+            {/* <div className="offcanvas-header"> */}
+            {/* <h5 className="offcanvas-title mt-0">Socials</h5> */}
+            {/* </div> */}
 
-            <hr />
+            {/* <hr /> */}
 
             {/* Socials */}
-            <div className="socials offcanvas-body">
+            <div className="socials offcanvas-body socials-link">
               <nav className="nav">
                 {socialLinks.map((social, index) => (
                   <a
