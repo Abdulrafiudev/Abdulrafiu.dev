@@ -2087,6 +2087,7 @@ body.odd .skill-category h3 {
 body.odd .resumebtn {
   color: var(--white-color);
 }
+
 @media (max-width: 991px) {
   .stack-wrapper .stack-item {
     top: 4rem;
@@ -2108,6 +2109,9 @@ body.odd .resumebtn {
   .stack-wrapper .stack-item {
     top: 3rem;
     height: 60vh;
+  }
+  .resumebtn {
+    display: none;
   }
   .skills-grid {
     grid-template-columns: repeat(1, 1fr);
