@@ -1,28 +1,60 @@
-import React, { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState, useRef } from "react";
+import axios from "axios";
 
 const SkillsSection = () => {
-  const [skillsData, setSkillsData] = useState(null);
+  const skillsData = {
+    title: "Crafting Unique Skills",
+    items: [
+      {
+        icon: "bi bi-app-indicator",
+        value: "3+",
+        label: "years of experience",
+        description:
+          "From startups to established brands, helping them achieve their digital goals.",
+      },
+      {
+        icon: "bi bi-layers-half",
+        value: "10+",
+        label: "Completed Projects",
+        description:
+          "Diverse portfolio across various industries, showcasing my versatility and expertise.",
+      },
+      {
+        icon: "bi bi-intersect",
+        value: "10+",
+        label: "Satisfied Clients",
+        description:
+          "Building long-term relationships with clients, ensuring their needs are met and expectations exceeded.",
+      },
+    ],
+    skillsProgress: [
+      {
+        title: "UI Design & Development",
+        progress: 94,
+      },
+    ],
+  };
   const skillsRef = useRef(null);
 
-  useEffect(() => {
-    axios.get('https://my-json-server.typicode.com/themeland/brilio-json-1/skills')
-      .then(response => {
-        setSkillsData(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching skills data:', error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://my-json-server.typicode.com/themeland/brilio-json-1/skills")
+  //     .then((response) => {
+  //       setSkillsData(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching skills data:", error);
+  //     });
+  // }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const progressBars = document.querySelectorAll('.progress-bar');
-            progressBars.forEach(progressBar => {
-              const value = progressBar.getAttribute('data-progress');
+            const progressBars = document.querySelectorAll(".progress-bar");
+            progressBars.forEach((progressBar) => {
+              const value = progressBar.getAttribute("data-progress");
               progressBar.style.opacity = 1;
               progressBar.style.width = `${value}%`;
             });
@@ -48,42 +80,47 @@ const SkillsSection = () => {
   }
 
   return (
-    <div className="row justify-content-between" ref={skillsRef}>
-      <div className="col-12 col-lg-3">
-        <div className="intro">
-          <h3 className="title">{skillsData.title}</h3>
+    <div className="skills-section">
+      <div className="row justify-content-between container" ref={skillsRef}>
+        <div className="col-12 col-lg-3">
+          <div className="intro">
+            <h3 className="title">{skillsData.title}</h3>
+          </div>
         </div>
-      </div>
-      <div className="col-12 col-lg-8">
-        <div className="row items">
-          {skillsData.items.map((item, index) => (
-            <div key={index} className="col-12 col-md-6 item">
-              <div className="content">
-                <div className="heading d-flex align-items-center">
-                  <i className={`icon ${item.icon}`}></i>
-                  <h2 className="title m-0 ms-2">{item.value}</h2>
+        <div className="col-12 col-lg-8">
+          <div className="row items">
+            {skillsData.items.map((item, index) => (
+              <div key={index} className="col-12 col-md-6 item">
+                <div className="content">
+                  <div className="heading d-flex align-items-center">
+                    <i className={`icon ${item.icon}`}></i>
+                    <h2 className="title m-0 ms-2">{item.value}</h2>
+                  </div>
+                  <span>{item.label}</span>
+                  <p className="mt-3">{item.description}</p>
                 </div>
-                <span>{item.label}</span>
-                <p className="mt-3">{item.description}</p>
               </div>
-            </div>
-          ))}
-          {skillsData.skillsProgress.map((skill, index) => (
-            <div key={index} className="col-12 col-md-6 item align-self-center">
-              <div className="content mt-5 mt-md-0">
-                <div className="progress">
-                  <span className="title">{skill.title}</span>
-                  <div
-                    className="progress-bar"
-                    data-progress={skill.progress}
-                    style={{ opacity: 0, width: '0%' }}
-                  >
-                    <span>{skill.progress}%</span>
+            ))}
+            {skillsData.skillsProgress.map((skill, index) => (
+              <div
+                key={index}
+                className="col-12 col-md-6 item align-self-center"
+              >
+                <div className="content mt-5 mt-md-0">
+                  <div className="progress">
+                    <span className="title">{skill.title}</span>
+                    <div
+                      className="progress-bar"
+                      data-progress={skill.progress}
+                      style={{ opacity: 0, width: "0%" }}
+                    >
+                      <span>{skill.progress}%</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

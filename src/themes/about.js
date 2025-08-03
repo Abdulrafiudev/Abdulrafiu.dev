@@ -14,6 +14,7 @@ import SearchModal from "../components/Miscellaneous/SearchModal";
 import OffcanvasMenu from "../components/Miscellaneous/OffcanvasMenu";
 import MagicCursor from "../components/Miscellaneous/MagicCursor";
 import LenisScroll from "../components/Header/LenisScroll";
+import TechnicalSkills from "../components/TechnicalSkills/technicalskills";
 
 const About = () => {
   return (
@@ -27,11 +28,11 @@ const About = () => {
           <Breadcrumb />
           <Shape />
           <Experiences />
-          <AnimatedImage
+          {/* <AnimatedImage
             imageSrc="/img/developerImage.jpg"
             altText="Developer Image"
-          />
-
+          /> */}
+          <TechnicalSkills />
           <CTA />
           <Footer />
           <SearchModal />

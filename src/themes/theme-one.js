@@ -12,6 +12,8 @@ import SearchModal from "../components/Miscellaneous/SearchModal";
 import OffcanvasMenu from "../components/Miscellaneous/OffcanvasMenu";
 import MagicCursor from "../components/Miscellaneous/MagicCursor";
 import LenisScroll from "../components/Header/LenisScroll";
+import SkillsSection from "../components/Skills/SkillsSection";
+import Technicalskills from "../components/TechnicalSkills/technicalskills";
 
 const ThemeOne = () => {
   return (
@@ -25,6 +27,8 @@ const ThemeOne = () => {
           <Hero />
           <Portfolio />
           <AboutSection />
+          <SkillsSection />
+          <Technicalskills />
           <Shape />
           <CTA />
           <Footer />

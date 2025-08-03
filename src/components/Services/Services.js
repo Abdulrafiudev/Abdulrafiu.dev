@@ -26,8 +26,8 @@ const Services = () => {
     <div className="row service-wrapper items mt-md-6">
       <h2> Services Offered:</h2>
       {services.map((service, index) => (
-        <div key={index} className="col-12 col-md-6 col-lg-4">
-          <div className="item d-flex align-items-start">
+        <div key={index} className="col-12 ">
+          <div className="item d-flex align-items-start service_box">
             <div className="item-count">{service.id}</div>
             <div className="content">
               <h4 className="mt-0">{service.title}</h4>
