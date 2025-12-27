@@ -2100,10 +2100,10 @@ body.odd .resumebtn {
     grid-template-columns: repeat(2, 1fr);
     width: 88%;
   }
-  .hero-button {
+  /* .hero-button {
     display: flex;
     justify-content: center;
-  }
+  } */
   .resume-link {
     font-size: 2rem !important;
   }
