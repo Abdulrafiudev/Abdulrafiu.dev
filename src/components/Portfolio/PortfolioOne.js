@@ -2,41 +2,41 @@ const PortfolioOne = () => {
   const portfolioItems = [
     {
       id: 1,
-      image: "/img/amazon-clone1.png",
-      title: "Amazon Clone: A Full-Stack E-Commerce Website Replica",
+      image: "/img/propollio_4.png",
+      title: "A Smart Contract to Proposal Generation Platform",
       categories: [
         {
-          categoryName: "Ecommerce",
+          categoryName: "Full-stack Applications",
         },
       ],
     },
     {
       id: 2,
-      image: "/img/towsheart.png",
-      title: "Towsheart: Engaging & Modern Dating Site Landing Page",
+      image: "/img/cusorcart_2.png",
+      title: "CursorCart - An E-commerce Platform",
       categories: [
         {
-          categoryName: "Frontend web development",
+          categoryName: "E-commerce",
         },
       ],
     },
     {
       id: 3,
-      image: "/img/poem-generator.png",
-      title: "PoetAI: A Creative & Dynamic Poem Generator Landing Page",
+      image: "/img/cryptic.png",
+      title: "A Creative & Dynamic Crypto Landing Page",
       categories: [
         {
-          categoryName: "Frontend web development",
+          categoryName: "Landing Pages",
         },
       ],
     },
     {
       id: 4,
-      image: "/img/abdulrafiu.ai-chatbot.png",
-      title: "A custom made chatbot",
+      image: "/img/glacier_2.png",
+      title: "Glacier Gardens Waitlist - GameFi on Sui Blockchain",
       categories: [
         {
-          categoryName: "A Gemini Api driven web app",
+          categoryName: "Web3",
         },
       ],
     },

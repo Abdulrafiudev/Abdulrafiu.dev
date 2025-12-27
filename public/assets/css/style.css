@@ -3039,6 +3039,9 @@ body.odd .resumebtn {
     max-width: 100%;
     font-size: 1.2rem;
   }
+  .navbar-brand {
+    display: none;
+  }
 }
 
 .works .container-fluid {
@@ -3760,6 +3763,12 @@ span.page-numbers:hover:not(.current) {
   .preview .hero-section .hero-content .hero-button {
     width: 100% !important;
   }
+  /* .projectImage {
+    object-fit: cover !important;
+  } */
+  .projectImageContainer {
+    height: 300px !important;
+  }
 }
 .preview .hero-section .hero-content .hero-button .icon {
   width: 2.25rem;
@@ -3917,6 +3926,9 @@ span.page-numbers:hover:not(.current) {
   }
   .offcanvas-wrapper .offcanvas .offcanvas-content hr {
     margin: 10px 0;
+  }
+  .offcanvas-content {
+    margin-top: 25px;
   }
   /* #endregion Modal */
 }
