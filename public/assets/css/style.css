@@ -3769,6 +3769,23 @@ span.page-numbers:hover:not(.current) {
   .projectImageContainer {
     height: 300px !important;
   }
+  .imageCardContent {
+    display: none !important;
+  }
+  .servicesAbout {
+    padding: 30px 0 !important;
+  }
+}
+@media (max-width: 999px) {
+  .projectImageContainer {
+    height: 300px !important;
+  }
+  .imageCardContent {
+    display: none !important;
+  }
+  .cardContentMobile {
+    padding-top: 1rem !important;
+  }
 }
 .preview .hero-section .hero-content .hero-button .icon {
   width: 2.25rem;

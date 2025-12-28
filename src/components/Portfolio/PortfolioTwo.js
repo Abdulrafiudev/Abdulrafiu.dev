@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const portfolioData = [
   {
     id: 1,
-    title: "A Smart Contract to Proposal Generation Platform",
+    title: "Propollio -A Smart Contract to Proposal Generation Platform",
     image: "/img/propollio_4.png",
     categories: ["Web Development", "Full-stack Applications"],
     projectLink: "/project-single",
@@ -190,11 +190,9 @@ const PortfolioTwo = () => {
                       className="card-thumb"
                       href={`${item.projectLink}?id=${item.id}`}
                       style={{
-                        display: "flex",
+                        display: "block",
                         height: "100%",
                         width: "100%",
-                        alignItems: "center",
-                        justifyContent: "center",
                       }}
                     >
                       <img
@@ -204,13 +202,9 @@ const PortfolioTwo = () => {
                         style={{
                           width: "100%",
                           height: "100%",
-                          objectFit: "contain",
-                          transform:
-                            hoveredItem === item.id
-                              ? "scale(1.05)"
-                              : "scale(1)",
-                          transition:
-                            "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                          minHeight: "auto",
+                          objectFit: "cover",
+                          display: "block",
                         }}
                       />
                       {/* Hover Overlay */}
@@ -260,7 +254,7 @@ const PortfolioTwo = () => {
 
                   {/* Content Section */}
                   <div
-                    className="card-content"
+                    className="card-content cardContentMobile"
                     style={{
                       padding: "2rem",
                       height: "35%",
@@ -281,7 +275,7 @@ const PortfolioTwo = () => {
                         {item.title}
                       </h4>
 
-                      <div className="show-project">
+                      <div className="show-project imageCardContent">
                         <div
                           className="card-terms"
                           style={{

@@ -3,7 +3,7 @@ import Services from "../Services/Services";
 
 const AboutSection = () => {
   return (
-    <section className="services">
+    <section className="services servicesAbout">
       <div className="container">
         {/* About Component */}
         <About />
