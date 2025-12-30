@@ -19,9 +19,9 @@ const portfolioData = [
   },
   {
     id: 3,
-    title: "A Creative & Dynamic Crypto Landing Page",
+    title: "Cryptic - A Creative & Dynamic Crypto Landing Page",
     image: "/img/cryptic.png",
-    categories: ["Landing Pages", "ui-ux"],
+    categories: ["Landing Pages", "ui-ux", "web3"],
     projectLink: "/project-single",
     description: "",
   },

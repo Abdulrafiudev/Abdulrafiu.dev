@@ -3786,6 +3786,19 @@ span.page-numbers:hover:not(.current) {
   .cardContentMobile {
     padding-top: 1rem !important;
   }
+  .singlePortfolioTitle {
+    font-weight: 600 !important;
+  }
+}
+@media (min-width: 1000px) {
+  .singlePortfolioTitle {
+    font-size: 35px !important;
+    font-weight: 600 !important;
+  }
+}
+.descriptionJustify,
+.taskJustify {
+  text-align: justify !important;
 }
 .preview .hero-section .hero-content .hero-button .icon {
   width: 2.25rem;
