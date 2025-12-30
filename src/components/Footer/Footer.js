@@ -1,6 +1,6 @@
 const Footer = ({
   className = "footer-area",
-  copyrightText = "©2025 Abdulrafiu Ibrahim. All Rights Reserved. Developed by ",
+  copyrightText = "©2025 Abdulrafiu Ibrahim. Developed by ",
   linkText = "Abdulrafiu Ibrahim",
   linkUrl = "#",
   scrollToTopText = "Scroll to Top",

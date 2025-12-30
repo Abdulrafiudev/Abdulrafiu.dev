@@ -3789,6 +3789,10 @@ span.page-numbers:hover:not(.current) {
   .singlePortfolioTitle {
     font-weight: 600 !important;
   }
+  .aboutImage {
+    height: 60px !important;
+    width: auto !important;
+  }
 }
 @media (min-width: 1000px) {
   .singlePortfolioTitle {
