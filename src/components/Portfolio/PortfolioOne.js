@@ -9,6 +9,7 @@ const PortfolioOne = () => {
     {
       id: 1,
       image: "/img/propollio_4.png",
+      mobileImage: "/img/propollio_mobile_1.png",
       title: "A Smart Contract to Proposal Generation Platform",
       categories: [
         {
@@ -19,6 +20,7 @@ const PortfolioOne = () => {
     {
       id: 2,
       image: "/img/cusorcart_2.png",
+      mobileImage: "/img/cusorcart_mobile_1.png",
       title: "CursorCart - An E-commerce Platform",
       categories: [
         {
@@ -29,6 +31,7 @@ const PortfolioOne = () => {
     {
       id: 3,
       image: "/img/cryptic.png",
+      mobileImage: "/img/cryptic_mobile_1.png",
       title: "A Creative & Dynamic Crypto Landing Page",
       categories: [
         {
@@ -39,6 +42,7 @@ const PortfolioOne = () => {
     {
       id: 4,
       image: "/img/glacier_2.png",
+      mobileImage: "/img/glacier_mobile_1.png",
       title: "Glacier Gardens Waitlist - GameFi on Sui Blockchain",
       categories: [
         {
@@ -105,6 +109,11 @@ const PortfolioOne = () => {
     }
   }, [isMobile]);
 
+  // Helper function to get the appropriate image
+  const getImage = (item) => {
+    return isMobile && item.mobileImage ? item.mobileImage : item.image;
+  };
+
   // Desktop view
   if (!isMobile) {
     return (
@@ -134,7 +143,7 @@ const PortfolioOne = () => {
                     }}
                   >
                     <img
-                      src={item.image}
+                      src={getImage(item)}
                       alt={item.title}
                       style={{
                         width: "100%",
@@ -246,7 +255,7 @@ const PortfolioOne = () => {
                       }}
                     >
                       <img
-                        src={item.image}
+                        src={getImage(item)}
                         alt={item.title}
                         style={{
                           width: "100%",

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const portfolioData = [
   {
@@ -56,6 +56,18 @@ const getCategoryCount = (category) => {
 const PortfolioTwo = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [hoveredItem, setHoveredItem] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <section className="works explore-area portfolio-filter pt-0">
@@ -68,17 +80,27 @@ const PortfolioTwo = () => {
               role="group"
               style={{
                 display: "flex",
-                flexWrap: "wrap",
+                flexWrap: isMobile ? "nowrap" : "wrap",
                 gap: "1rem",
-                justifyContent: "center",
+                justifyContent: isMobile ? "flex-start" : "center",
                 marginBottom: "4rem",
+                overflowX: isMobile ? "auto" : "visible",
+                overflowY: "hidden",
+                paddingBottom: isMobile ? "1rem" : "0",
+                scrollbarWidth: "thin",
+                scrollbarColor: "#ccc transparent",
+                WebkitOverflowScrolling: "touch",
+                msOverflowStyle: "-ms-autohiding-scrollbar",
               }}
             >
               {categories.map(({ id, label }) => (
                 <div
                   key={id}
                   className="input-item d-flex align-items-center"
-                  style={{ gap: "0.5rem" }}
+                  style={{
+                    gap: "0.5rem",
+                    flexShrink: 0,
+                  }}
                 >
                   <div className="content">
                     <input
@@ -97,6 +119,7 @@ const PortfolioTwo = () => {
                       style={{
                         cursor: "pointer",
                         transition: "all 0.3s ease",
+                        whiteSpace: "nowrap",
                       }}
                     >
                       {label}
@@ -106,6 +129,21 @@ const PortfolioTwo = () => {
                 </div>
               ))}
             </div>
+
+            {/* Scroll indicator for mobile */}
+            {isMobile && (
+              <div
+                style={{
+                  textAlign: "center",
+                  color: "#999",
+                  fontSize: "0.85rem",
+                  marginTop: "-2.5rem",
+                  marginBottom: "2rem",
+                }}
+              >
+                ← Scroll to see more →
+              </div>
+            )}
           </div>
         </div>
 
@@ -127,42 +165,46 @@ const PortfolioTwo = () => {
                 onMouseLeave={() => setHoveredItem(null)}
                 style={{
                   position: "relative",
-                  height: "520px",
+                  height: isMobile ? "auto" : "520px",
                   perspective: "1500px",
                 }}
               >
-                {/* Decorative Border Frame */}
-                <div
-                  className="border-frame"
-                  style={{
-                    position: "absolute",
-                    top: "15px",
-                    left: "15px",
-                    right: "-15px",
-                    bottom: "-15px",
-                    border: "3px solid #ccc",
-                    borderRadius: "20px",
-                    transform:
-                      hoveredItem === item.id
-                        ? "rotate(-1deg) scale(1.02)"
-                        : "rotate(-2deg)",
-                    transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-                    zIndex: 1,
-                    opacity: 0.5,
-                  }}
-                />
+                {/* Decorative Border Frame - Hide on mobile */}
+                {!isMobile && (
+                  <div
+                    className="border-frame"
+                    style={{
+                      position: "absolute",
+                      top: "15px",
+                      left: "15px",
+                      right: "-15px",
+                      bottom: "-15px",
+                      border: "3px solid #ccc",
+                      borderRadius: "20px",
+                      transform:
+                        hoveredItem === item.id
+                          ? "rotate(-1deg) scale(1.02)"
+                          : "rotate(-2deg)",
+                      transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                      zIndex: 1,
+                      opacity: 0.5,
+                    }}
+                  />
+                )}
 
                 {/* Main Card */}
                 <div
                   className="card portfolio-item layout-2 scale has-shadow"
                   style={{
                     position: "relative",
-                    height: "100%",
+                    height: isMobile ? "auto" : "100%",
                     borderRadius: "20px",
                     overflow: "hidden",
                     transform:
-                      hoveredItem === item.id
+                      hoveredItem === item.id && !isMobile
                         ? "rotate(0deg) translateY(-8px)"
+                        : isMobile
+                        ? "rotate(0deg)"
                         : "rotate(-0.5deg)",
                     transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
                     zIndex: 2,
@@ -177,7 +219,8 @@ const PortfolioTwo = () => {
                   <div
                     className="image-holder"
                     style={{
-                      height: "65%",
+                      height: isMobile ? "auto" : "65%",
+                      aspectRatio: isMobile ? "16/10" : "auto",
                       overflow: "hidden",
                       position: "relative",
                       background: "#f8f8f8",
@@ -241,7 +284,7 @@ const PortfolioTwo = () => {
                         color: "white",
                         boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
                         transform:
-                          hoveredItem === item.id
+                          hoveredItem === item.id && !isMobile
                             ? "rotate(360deg) scale(1.1)"
                             : "rotate(0deg)",
                         transition:
@@ -256,8 +299,8 @@ const PortfolioTwo = () => {
                   <div
                     className="card-content cardContentMobile"
                     style={{
-                      padding: "2rem",
-                      height: "35%",
+                      padding: isMobile ? "1.5rem" : "2rem",
+                      height: isMobile ? "auto" : "35%",
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "space-between",
@@ -267,7 +310,7 @@ const PortfolioTwo = () => {
                       <h4
                         className="title mt-0 mb-3"
                         style={{
-                          fontSize: "1.3rem",
+                          fontSize: isMobile ? "1.1rem" : "1.3rem",
                           lineHeight: "1.4",
                           fontWeight: "600",
                         }}
