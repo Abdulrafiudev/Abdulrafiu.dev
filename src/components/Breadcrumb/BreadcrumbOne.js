@@ -22,7 +22,11 @@ const BreadcrumbOne = () => {
               <div className="heading w-60">
                 <h1 className="title">
                   {breadcrumbContent.title}{" "}
-                  <img src={breadcrumbContent.imageSrc} alt="Photographer" />
+                  {/* <img
+                    src={breadcrumbContent.imageSrc}
+                    alt="Photographer"
+                    className="aboutImage"
+                  /> */}
                 </h1>
                 <div className="flex ms-auto">
                   <span className="line animate-line my-3 my-md-0"></span>

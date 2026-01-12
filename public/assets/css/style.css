@@ -2100,10 +2100,10 @@ body.odd .resumebtn {
     grid-template-columns: repeat(2, 1fr);
     width: 88%;
   }
-  .hero-button {
+  /* .hero-button {
     display: flex;
     justify-content: center;
-  }
+  } */
   .resume-link {
     font-size: 2rem !important;
   }
@@ -3039,6 +3039,9 @@ body.odd .resumebtn {
     max-width: 100%;
     font-size: 1.2rem;
   }
+  .navbar-brand {
+    display: none;
+  }
 }
 
 .works .container-fluid {
@@ -3760,6 +3763,46 @@ span.page-numbers:hover:not(.current) {
   .preview .hero-section .hero-content .hero-button {
     width: 100% !important;
   }
+  /* .projectImage {
+    object-fit: cover !important;
+  } */
+  .projectImageContainer {
+    height: 300px !important;
+  }
+  .imageCardContent {
+    display: none !important;
+  }
+  .servicesAbout {
+    padding: 30px 0 !important;
+  }
+}
+@media (max-width: 999px) {
+  .projectImageContainer {
+    height: 300px !important;
+  }
+  .imageCardContent {
+    display: none !important;
+  }
+  .cardContentMobile {
+    padding-top: 1rem !important;
+  }
+  .singlePortfolioTitle {
+    font-weight: 600 !important;
+  }
+  .aboutImage {
+    height: 60px !important;
+    width: auto !important;
+  }
+}
+@media (min-width: 1000px) {
+  .singlePortfolioTitle {
+    font-size: 35px !important;
+    font-weight: 600 !important;
+  }
+}
+.descriptionJustify,
+.taskJustify {
+  text-align: justify !important;
 }
 .preview .hero-section .hero-content .hero-button .icon {
   width: 2.25rem;
@@ -3917,6 +3960,9 @@ span.page-numbers:hover:not(.current) {
   }
   .offcanvas-wrapper .offcanvas .offcanvas-content hr {
     margin: 10px 0;
+  }
+  .offcanvas-content {
+    margin-top: 25px;
   }
   /* #endregion Modal */
 }

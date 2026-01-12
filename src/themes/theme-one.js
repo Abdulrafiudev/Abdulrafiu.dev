@@ -1,5 +1,3 @@
-import React from "react";
-
 import Preloader from "../components/Miscellaneous/Preloader";
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";

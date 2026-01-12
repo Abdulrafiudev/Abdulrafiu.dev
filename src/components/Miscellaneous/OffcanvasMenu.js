@@ -80,9 +80,9 @@ const OffcanvasMenu = ({ className = "offcanvas-wrapper" }) => {
                   </li>
                 ))}
               </ul>
-              <a href={resume} download="resume.pdf" className="resume-link">
+              {/* <a href={resume} download="resume.pdf" className="resume-link">
                 Resume <i className="fas fa-download me-2"></i>
-              </a>
+              </a> */}
             </div>
           </div>
 

@@ -15,6 +15,20 @@ const Experiences = () => {
     {
       id: 2,
       count: "02.",
+      title: "Mailgenie",
+      position: "Full-Stack Developer",
+      date: "Contract | November 2025 – December 2025",
+      description: [
+        "Designed and developed responsive web interfaces using modern frontend technologies (React.js and Next.js) to deliver a seamless and intuitive user experience across the Mailgenie platform.",
+        "Implemented core application features including email campaign creation, contact management, and dashboard analytics to support efficient email automation workflows.",
+        "Built reusable and scalable UI components to ensure consistency, maintainability, and rapid feature iteration across the platform.",
+        "Optimized application performance and SEO by implementing best practices such as code splitting, server-side rendering, and efficient state management.",
+        "Participated in debugging, testing, and refining application features to improve system reliability, usability, and overall product quality.",
+      ],
+    },
+    {
+      id: 3,
+      count: "03.",
       title: "CyberCharm",
       position: "Full-Stack Developer",
       date: "December 2024 – Febuary 2025",
@@ -25,8 +39,8 @@ const Experiences = () => {
       ],
     },
     {
-      id: 3,
-      count: "03.",
+      id: 4,
+      count: "04.",
       title: "Upwork",
       position: "Freelance Web Developer",
       date: "August 2023 – Present",
